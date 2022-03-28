@@ -13,4 +13,89 @@ $very-light-gray: hsl(0, 0%, 98%);
 body {
   font-size: 1.125rem;
   font-family: "Public Sans", sans-serif;
+  color: $dark-blue;
+}
+header {
+  background-color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  nav {
+    position: absolute;
+    display: none;
+    top: 69px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 69px);
+    background-color: rgba($color: #000, $alpha: 0.3);
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: white;
+      width: 80%;
+      margin: 1.5rem auto;
+      gap: 1.5rem;
+      padding: 1.5rem;
+      border-radius: 5px;
+      @media screen and (min-width: 800px) {
+        & {
+          flex-direction: row;
+          background-color: inherit;
+          padding: 0;
+          margin: 0;
+        }
+      }
+      li {
+        list-style: none;
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
+      }
+    }
+    @media screen and (min-width: 800px) {
+      & {
+        height: min-content;
+        width: auto;
+        display: block;
+        background-color: inherit;
+        position: relative;
+        top: auto;
+        left: auto;
+      }
+    }
+  }
+  span {
+    cursor: pointer;
+    position: relative;
+    font-size: 2rem;
+    #close-btn {
+      display: none;
+      // position: absolute;
+    }
+
+    @media screen and (min-width: 800px) {
+      & {
+        display: none;
+      }
+    }
+  }
+  button {
+    padding: 0.2rem 0.5rem;
+    background: linear-gradient($lime-green, $bright-cyan);
+    color: white;
+    border: none;
+    display: none;
+    @media screen and (min-width: 800px) {
+      & {
+        display: block;
+      }
+    }
+  }
+}
+.show-close-btn {
+  display: inline-block;
 }

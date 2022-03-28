@@ -1,3 +1,29 @@
 * { padding: 0; margin: 0; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
-body { font-size: 1.125rem; font-family: "Public Sans", sans-serif; }
+body { font-size: 1.125rem; font-family: "Public Sans", sans-serif; color: #2d314d; }
+
+header { background-color: white; padding: 1rem 2rem; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; }
+
+header nav { position: absolute; display: none; top: 69px; left: 0; width: 100%; height: calc(100vh - 69px); background-color: rgba(0, 0, 0, 0.3); }
+
+header nav ul { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; background-color: white; width: 80%; margin: 1.5rem auto; gap: 1.5rem; padding: 1.5rem; border-radius: 5px; }
+
+@media screen and (min-width: 800px) { header nav ul { -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; background-color: inherit; padding: 0; margin: 0; } }
+
+header nav ul li { list-style: none; }
+
+header nav ul li a { text-decoration: none; color: inherit; }
+
+@media screen and (min-width: 800px) { header nav { height: -webkit-min-content; height: -moz-min-content; height: min-content; width: auto; display: block; background-color: inherit; position: relative; top: auto; left: auto; } }
+
+header span { cursor: pointer; position: relative; font-size: 2rem; }
+
+header span #close-btn { display: none; }
+
+@media screen and (min-width: 800px) { header span { display: none; } }
+
+header button { padding: 0.2rem 0.5rem; background: -webkit-gradient(linear, left top, left bottom, from(#31d35c), to(#2bb7da)); background: linear-gradient(#31d35c, #2bb7da); color: white; border: none; display: none; }
+
+@media screen and (min-width: 800px) { header button { display: block; } }
+
+.show-close-btn { display: inline-block; }
