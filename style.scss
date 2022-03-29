@@ -205,7 +205,6 @@ header {
 
   img {
     background-image: url(./images/bg-intro-mobile.svg);
-    background-position: right;
     background-size: cover;
     width: 100%;
     margin-top: -10.5rem;
@@ -226,6 +225,9 @@ header {
   @media screen and (min-width: 800px) {
     & {
       padding-top: 10rem;
+    }
+    p.caption {
+      width: 40rem;
     }
   }
 }
@@ -281,12 +283,32 @@ footer {
   display: grid;
   justify-content: center;
   text-align: center;
+  padding-top: 3rem;
   @media screen and (min-width: 800px) {
     & {
       grid-template-columns: repeat(3, 1fr) 2fr;
       gap: 3rem;
-      padding-top: 2rem;
       text-align: left;
+    }
+  }
+  .logo-container {
+    display: flex;
+    padding-top: 1rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    .icon-container {
+      display: flex;
+      align-items: center;
+      margin: 2rem 0;
+      @media screen and (min-width: 800px) {
+        & {
+          margin: 0;
+        }
+      }
+      li img {
+        width: 2rem;
+      }
     }
   }
   ul {

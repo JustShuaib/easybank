@@ -66,7 +66,7 @@ header button { display: none; }
 
 @media screen and (min-width: 800px) { .main-section button { margin: 2rem 0; } }
 
-.main-section img { background-image: url(./images/bg-intro-mobile.svg); background-position: right; background-size: cover; width: 100%; margin-top: -10.5rem; background-repeat: no-repeat; }
+.main-section img { background-image: url(./images/bg-intro-mobile.svg); background-size: cover; width: 100%; margin-top: -10.5rem; background-repeat: no-repeat; }
 
 @media screen and (min-width: 800px) { .main-section img { -webkit-box-ordinal-group: 2; -ms-flex-order: 1; order: 1; margin-top: -5rem; } }
 
@@ -74,7 +74,8 @@ header button { display: none; }
 
 .section-center section { background-color: inherit; }
 
-@media screen and (min-width: 800px) { .section-center { padding-top: 10rem; } }
+@media screen and (min-width: 800px) { .section-center { padding-top: 10rem; }
+  .section-center p.caption { width: 40rem; } }
 
 .section-container { display: -ms-grid; display: grid; padding: 0; }
 
@@ -96,9 +97,17 @@ header button { display: none; }
 
 .container p { text-align: left; }
 
-footer { background-color: #2d314d; display: -ms-grid; display: grid; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; text-align: center; }
+footer { background-color: #2d314d; display: -ms-grid; display: grid; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; text-align: center; padding-top: 3rem; }
 
-@media screen and (min-width: 800px) { footer { -ms-grid-columns: (1fr)[3] 2fr; grid-template-columns: repeat(3, 1fr) 2fr; gap: 3rem; padding-top: 2rem; text-align: left; } }
+@media screen and (min-width: 800px) { footer { -ms-grid-columns: (1fr)[3] 2fr; grid-template-columns: repeat(3, 1fr) 2fr; gap: 3rem; text-align: left; } }
+
+footer .logo-container { display: -webkit-box; display: -ms-flexbox; display: flex; padding-top: 1rem; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; }
+
+footer .logo-container .icon-container { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; margin: 2rem 0; }
+
+@media screen and (min-width: 800px) { footer .logo-container .icon-container { margin: 0; } }
+
+footer .logo-container .icon-container li img { width: 2rem; }
 
 footer ul { -webkit-column-span: 1; column-span: 1; display: -ms-grid; display: grid; gap: 1rem; padding-bottom: 1rem; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
 
