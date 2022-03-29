@@ -16,6 +16,14 @@ $very-light-gray: hsl(0, 0%, 98%);
   padding: 0.75rem 2rem;
   border: none;
 }
+%shared-padding {
+  padding: 1rem 2rem;
+  @media screen and (min-width: 800px) {
+    & {
+      padding: 1rem 6rem;
+    }
+  }
+}
 * {
   padding: 0;
   margin: 0;
@@ -26,17 +34,41 @@ body {
   font-family: "Public Sans", sans-serif;
   color: $dark-blue;
 }
+h2,
+h3 {
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
+  @media screen and (min-width: 800px) {
+    & {
+      text-align: left;
+    }
+  }
+}
+h2 {
+  font-size: 2.5rem;
+}
+h3 {
+  font-size: 1.8rem;
+  text-transform: capitalize;
+}
+p {
+  line-height: 2rem;
+  color: $grayish-blue;
+  text-align: center;
+  margin-bottom: 3rem;
+  @media screen and (min-width: 800px) {
+    & {
+      text-align: left;
+    }
+  }
+}
 header {
+  @extend %shared-padding;
   background-color: white;
-  padding: 1rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  @media screen and (min-width: 800px) {
-    & {
-      padding: 1rem 6rem;
-    }
-  }
   nav {
     position: absolute;
     display: none;
@@ -91,7 +123,6 @@ header {
     font-size: 2rem;
     #close-btn {
       display: none;
-      // position: absolute;
     }
 
     @media screen and (min-width: 800px) {
@@ -113,72 +144,79 @@ header {
 .show-close-btn {
   display: inline-block;
 }
-main {
-  .main-section {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    overflow: hidden;
-    background-color: $light-grayish-blue;
+.main-section {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  overflow: hidden;
+  @media screen and (min-width: 800px) {
+    & {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4rem;
+    }
+  }
+  div {
+    @extend %shared-padding;
+  }
+  h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
     @media screen and (min-width: 800px) {
       & {
-        grid-template-columns: repeat(2, 1fr);
-        padding-left: 4rem;
-        gap: 4rem;
+        text-align: left;
       }
     }
-    div {
-      padding: 0 2rem;
-      @media screen and (min-width: 800px) {
-        & {
-          // order: 2;
-          text-align: left;
-        }
-      }
-      h1 {
-        font-size: 3rem;
-        text-align: center;
-        margin-bottom: 2rem;
-        @media screen and (min-width: 800px) {
-          & {
-            text-align: left;
-          }
-        }
-      }
-      p {
-        line-height: 2rem;
-        color: $grayish-blue;
-      }
-      button {
-        @extend %shared-btn;
-        display: block;
-        margin: 2rem auto 6rem auto;
-        @media screen and (min-width: 800px) {
-          & {
-            margin: 2rem 0;
-          }
-        }
+  }
+  button {
+    @extend %shared-btn;
+    display: block;
+    margin: 2rem auto 6rem auto;
+    @media screen and (min-width: 800px) {
+      & {
+        margin: 2rem 0;
       }
     }
-    img {
-      background-image: url(./images/bg-intro-mobile.svg);
-      background-position: center;
-      background-size: cover;
-      width: 100%;
-      margin-top: -10.5rem;
-      background-repeat: no-repeat;
-      @media screen and (min-width: 800px) {
-        & {
-          order: 1;
-          margin-top: -5rem;
-        }
+  }
+
+  img {
+    background-image: url(./images/bg-intro-mobile.svg);
+    background-position: right;
+    background-size: cover;
+    width: 100%;
+    margin-top: -10.5rem;
+    background-repeat: no-repeat;
+    @media screen and (min-width: 800px) {
+      & {
+        order: 1;
+        margin-top: -5rem;
       }
     }
   }
 }
-article img {
-  width: 100%;
+.section-center {
+  background-color: $light-grayish-blue;
+  @extend %shared-padding;
+}
+.section-container {
+  display: grid;
+  row-gap: 1rem;
+  @media screen and (min-width: 800px) {
+    & {
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 2rem;
+    }
+  }
+  img {
+    display: block;
+    margin: 0 auto;
+    @media screen and (min-width: 800px) {
+      & {
+        margin: 0;
+      }
+    }
+  }
 }
 footer {
   background-color: $dark-blue;
