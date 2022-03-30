@@ -33,6 +33,7 @@ $very-light-gray: hsl(0, 0%, 98%);
     }
   }
 }
+// General styles
 * {
   padding: 0;
   margin: 0;
@@ -91,6 +92,9 @@ section:last-child {
   background-color: $very-light-gray;
   padding-bottom: 4rem;
 }
+// End of general styles
+
+// Header
 header {
   @extend %shared-padding;
   background-color: white;
@@ -99,21 +103,24 @@ header {
   justify-content: space-between;
   nav {
     position: absolute;
-    display: none;
-    top: 69px;
+    // display: none;
+    top: 55px;
     left: 0;
     width: 100%;
-    height: calc(100vh - 69px);
-    background-color: rgba($color: #000, $alpha: 0.3);
+    height: calc(100vh - 55px);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.1));
+    opacity: 0;
+    transition: all 0.2s linear;
     @media screen and (min-width: 800px) {
       & {
-        height: min-content;
+        height: auto;
+        background: white;
         width: auto;
         display: block;
-        background-color: inherit;
         position: relative;
         top: auto;
         left: auto;
+        opacity: 1;
       }
     }
     ul {
@@ -130,7 +137,6 @@ header {
       @media screen and (min-width: 800px) {
         & {
           flex-direction: row;
-          background-color: inherit;
           padding: 0;
           margin: 0;
           color: $grayish-blue;
@@ -154,7 +160,7 @@ header {
               background: linear-gradient(to right, $lime-green, $bright-cyan);
               position: absolute;
               left: 0;
-              bottom: -1.8rem;
+              bottom: -1.7rem;
               transition: all 0.3s ease-in-out;
             }
             &:hover::after {
@@ -168,8 +174,10 @@ header {
   span {
     cursor: pointer;
     position: relative;
-    font-size: 2rem;
-    #close-btn {
+    .close-btn {
+      position: absolute;
+      top: 0;
+      left: 0;
       display: none;
     }
 
@@ -189,9 +197,16 @@ header {
     }
   }
 }
-.show-close-btn {
-  display: inline-block;
+// End of header
+//*********  Header toggle classes *******
+.hide-element {
+  opacity: 0;
 }
+.show-element {
+  opacity: 1;
+}
+// ******* End of toggle classes ********
+// Main section
 .main-section {
   display: grid;
   padding: 0;
@@ -245,6 +260,7 @@ header {
     }
   }
 }
+// End of main section
 .section-center {
   background-color: $light-grayish-blue;
   section {
@@ -351,6 +367,7 @@ footer {
       a {
         text-decoration: none;
         color: white;
+        transition: all 0.3s linear;
         &:hover {
           color: $lime-green;
         }

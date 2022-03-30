@@ -12,12 +12,6 @@
       rel="stylesheet"
     />
     <!-- End of Google font -->
-    <!-- Font awesome -->
-    <script
-      src="https://kit.fontawesome.com/6f90bc1711.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- End of Font awesome -->
     <link
       rel="icon"
       type="image/png"
@@ -41,8 +35,13 @@
       </nav>
 
       <span class="hamburger">
-        <i class="fas fa-bars" id="hamburger"></i>
-        <i class="fa-solid fa-xmark" id="close-btn"></i>
+        <img src="./images/icon-hamburger.svg" alt="hamburger" id="hamburger" />
+        <img
+          src="./images/icon-close.svg"
+          alt="close icon"
+          class="close-btn"
+          id="close-btn"
+        />
       </span>
       <button type="button">Request invite</button>
     </header>
@@ -231,10 +230,22 @@
       >
       Coded by <a href="www.github.com/JustShuaib">Adeoti Shuaib</a>
     </aside>
+    <!-- Yoggle JavaScript -->
     <script>
       const hamburger = document.getElementById("hamburger");
       const closeBtn = document.getElementById("close-btn");
-      const navBar = document.querySelector(".nav-bar");
+      const navBar = document.getElementsByTagName("nav")[0];
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.add("hide-element");
+        navBar.classList.add("show-element");
+        closeBtn.classList.remove("close-btn");
+      });
+      closeBtn.addEventListener("click", () => {
+        hamburger.classList.remove("hide-element");
+        navBar.classList.remove("show-element");
+        closeBtn.classList.add("close-btn");
+      });
     </script>
+    <!-- End of toggle javascript -->
   </body>
 </html>
