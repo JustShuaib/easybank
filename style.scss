@@ -64,6 +64,14 @@ h3 {
 h4 {
   font-size: 1.5rem;
   padding-top: 1rem;
+  a {
+    text-decoration-line: none;
+    color: inherit;
+
+    &:hover {
+      color: $lime-green;
+    }
+  }
 }
 p {
   line-height: 2rem;
@@ -133,6 +141,26 @@ header {
         a {
           text-decoration: none;
           color: inherit;
+          position: relative;
+          transition: all 0.3s ease-in-out;
+          &:hover {
+            color: $dark-blue;
+          }
+          @media screen and (min-width: 800px) {
+            &::after {
+              content: "";
+              width: 0;
+              height: 5px;
+              background: linear-gradient(to right, $lime-green, $bright-cyan);
+              position: absolute;
+              left: 0;
+              bottom: -1.8rem;
+              transition: all 0.3s ease-in-out;
+            }
+            &:hover::after {
+              width: 100%;
+            }
+          }
         }
       }
     }
@@ -323,6 +351,9 @@ footer {
       a {
         text-decoration: none;
         color: white;
+        &:hover {
+          color: $lime-green;
+        }
       }
     }
   }

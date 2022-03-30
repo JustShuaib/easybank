@@ -22,6 +22,10 @@ h3 { font-size: 1.9rem; text-transform: capitalize; }
 
 h4 { font-size: 1.5rem; padding-top: 1rem; }
 
+h4 a { -webkit-text-decoration-line: none; text-decoration-line: none; color: inherit; }
+
+h4 a:hover { color: #31d35c; }
+
 p { line-height: 2rem; color: #9698a6; text-align: center; margin-bottom: 3rem; }
 
 @media screen and (min-width: 800px) { p { text-align: left; } }
@@ -40,7 +44,12 @@ header nav ul { display: -webkit-box; display: -ms-flexbox; display: flex; -webk
 
 header nav ul li { list-style: none; }
 
-header nav ul li a { text-decoration: none; color: inherit; }
+header nav ul li a { text-decoration: none; color: inherit; position: relative; -webkit-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; }
+
+header nav ul li a:hover { color: #2d314d; }
+
+@media screen and (min-width: 800px) { header nav ul li a::after { content: ""; width: 0; height: 5px; background: -webkit-gradient(linear, left top, right top, from(#31d35c), to(#2bb7da)); background: linear-gradient(to right, #31d35c, #2bb7da); position: absolute; left: 0; bottom: -1.8rem; -webkit-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; }
+  header nav ul li a:hover::after { width: 100%; } }
 
 header span { cursor: pointer; position: relative; font-size: 2rem; }
 
@@ -114,6 +123,8 @@ footer ul { -webkit-column-span: 1; column-span: 1; display: -ms-grid; display: 
 footer ul li { list-style: none; }
 
 footer ul li a { text-decoration: none; color: white; }
+
+footer ul li a:hover { color: #31d35c; }
 
 footer div.btn-container { -webkit-column-span: 2; column-span: 2; }
 
