@@ -96,7 +96,7 @@ header button { display: none; }
 
 .container { row-gap: 2rem; }
 
-.container article { overflow: hidden; background-color: white; border-radius: 10px; }
+.container article { overflow: hidden; background-color: white; -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; border-radius: 10px; }
 
 .container article img { width: 100%; }
 
