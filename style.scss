@@ -248,12 +248,13 @@ header {
   img {
     background-image: url(./images/bg-intro-mobile.svg);
     background-size: cover;
-    background-position: bottom;
+    background-position: center;
     width: 100%;
     margin-top: -10.5rem;
     background-repeat: no-repeat;
     @media screen and (min-width: 800px) {
       & {
+        background-image: url(./images/bg-intro-desktop.svg);
         order: 1;
         margin-top: -5rem;
       }
